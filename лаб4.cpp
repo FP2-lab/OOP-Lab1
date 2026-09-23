@@ -71,5 +71,21 @@ void printMatrix(int** matrix, int rows, int cols, bool showBorders = true, std:
 }
 int main()
 {
-    return 0;   
+    int rows = 3;
+    int cols = 3;
+
+    int** matrix = allocateMatrix(rows, cols);
+
+    fillMatrix(matrix, rows, cols);
+
+    // 1. Без дополнительных параметров
+    printMatrix(matrix, rows, cols);
+
+    // 2. Только с заголовком
+    printMatrix(matrix, rows, cols, true, "Оценки студентов");
+
+    // 3. Со всеми параметрами
+    printMatrix(matrix, rows, cols, false, "Матрица без рамки");
+
+    return 0;
 }
