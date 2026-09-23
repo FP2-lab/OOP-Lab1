@@ -64,12 +64,28 @@ void reSizeArray(SafeArray& arr, int N, int M)
 }
 int main()
 {
-    
     SafeArray myArr = createArray(5);
 
+    getElement(myArr, 0) = 10;
+    getElement(myArr, 1) = 20;
     getElement(myArr, 2) = 999;
+    getElement(myArr, 3) = 40;
+    getElement(myArr, 4) = 50;
 
-    std::cout << getElement(myArr, 2) << std::endl;
+    std::cout << "Исходный массив: ";
+    printSafe(myArr);
 
+    reSizeArray(myArr, 5, 7);
+
+    std::cout << "После увеличения: ";
+    printSafe(myArr);
+
+    reSizeArray(myArr, 7, 4);
+
+    std::cout << "После уменьшения: ";
+    printSafe(myArr);
+
+    getElement(myArr, 10) = 500;
+    delete[] myArr.data;
     return 0;
 }
