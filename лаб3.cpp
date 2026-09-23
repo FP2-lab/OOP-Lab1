@@ -25,8 +25,18 @@ int& getElement(SafeArray& arr, int index)
 
     return arr.data[index];
 }
+void printSafe(const SafeArray& arr)
+{
+    for (int i = 0; i < arr.size; ++i)
+    {
+        std::cout << arr.data[i] << " ";
+    }
+
+    std::cout << std::endl;
+}
 int main()
 {
+    
     SafeArray myArr = createArray(5);
 
     getElement(myArr, 2) = 999;
