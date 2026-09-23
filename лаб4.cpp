@@ -69,6 +69,15 @@ void printMatrix(int** matrix, int rows, int cols, bool showBorders = true, std:
         std::cout << "-" << std::endl;
     }
 }
+void freeMatrix(int** matrix, int rows)
+{
+    for (int i = 0; i < rows; ++i)
+    {
+        delete[] matrix[i];
+    }
+
+    delete[] matrix;
+}
 int main()
 {
     int rows = 3;
@@ -86,6 +95,6 @@ int main()
 
     // 3. Со всеми параметрами
     printMatrix(matrix, rows, cols, false, "Матрица без рамки");
-
+    freeMatrix(matrix, rows);
     return 0;
 }
