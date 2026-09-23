@@ -1,8 +1,18 @@
 #include <iostream>
 
+void fillArray(int (&arr)[10])
+{
+    for (int& x : arr)
+    {
+        std::cin >> x;
+    }
+}
+
 int main()
 {
-    std::cout << "Laboratory work 1" << std::endl;
+    int arr[10]{};
+
+    fillArray(arr);
 
     return 0;
 }
