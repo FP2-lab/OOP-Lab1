@@ -59,5 +59,13 @@ int main()
 
     std::cout << std::endl;
 
+    delete[] arr;
+    arr = nullptr;
+
+    if (arr == nullptr)
+    {
+    std::cout << "Pointer is null" << std::endl;
+    }
+
     return 0;
 }
