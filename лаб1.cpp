@@ -7,7 +7,13 @@ void fillArray(int (&arr)[10])
         std::cin >> x;
     }
 }
-
+void multiplyByTwo(int (&arr)[10])
+{
+    for (int& x : arr)
+    {
+        x *= 2;
+    }
+}
 void printArray(const int (&arr)[10])
 {
     for (auto x : arr)
@@ -30,6 +36,8 @@ int main()
     fillArray(arr);
     printArray(arr);
     swapElements(arr, 0, 9);
+    printArray(arr);
+    multiplyByTwo(arr);
     printArray(arr);
     return 0;
 }
