@@ -27,5 +27,11 @@ int& getElement(SafeArray& arr, int index)
 }
 int main()
 {
+    SafeArray myArr = createArray(5);
+
+    getElement(myArr, 2) = 999;
+
+    std::cout << getElement(myArr, 2) << std::endl;
+
     return 0;
 }
